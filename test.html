@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Testimonial</title>
+  <link rel="shortcut icon" type="image/x-icon" href="fav20.png">
+  
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    --size: 50px;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: "Poppins", sans-serif;
+    background-color: #fefae0;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+}
+
+header {
+    width: min(95%, 70vmin);
+    text-align: center;
+    align-self: center;
+}
+header h1 {
+    font-weight: normal;
+    line-height: 2.7rem;
+    font-size: 2rem;
+}
+header h1 span {
+    color: #d4a373;
+    font-weight: 700;
+}
+
+.clients {
+    width: min(90%, 60vmin);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    position: relative;
+    align-self: flex-start;
+}
+
+.activeClient {
+    width: min(90%, 70vmin);
+    display: grid;
+    grid-template-columns: max-content, 1fr;
+    grid-auto-rows: auto;
+    column-gap: 2em;
+    margin: 0 auto;
+    align-self: center;
+}
+.activeClient img {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    border-radius: 50%;
+}
+.quote {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    position: relative;
+}
+.quote::before {
+    position: absolute;
+    top: -60px;
+    left: -30px;
+    content: open-quote;
+    font-family: serif;
+    font-size: 7rem;
+    color: #d4a373;
+    opacity: 0.3;
+}
+
+.client {
+    width: var(--size);
+    height: var(--size);
+    object-fit: cover;
+    border-radius: 50%;
+    transform-origin: 50% 50%;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+.client img {
+    width: 100%;
+    filter: grayscale(80%);
+}
+
+.active {
+    transform: scale(1.2);
+    border: 2px solid #d4a373;
+}
+.active img {
+    filter: grayscale(0);
+}
+
+@media(max-width: 600px) {
+    .activeClient {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        row-gap: 1em;
+    }
+    .activeClient img {
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+        border: 2px solid red;
+    }
+    .activeClient .quote {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
+    .clients {
+        margin-top: 2em;
+    }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no">
+  <div class="container" id="app">
+  <header>
+    <h1>See what our students are saying about <span>GICT</span></h1>
+  </header>
+  <section>
+    <div class="activeClient">
+      <img id="client-photo" :src="clientObj.photo" alt="active client photo">
+      <p id="client-quote" class="quote">{{ clientObj.quote }}</p>
+      <p id="client-name"><strong>{{ clientObj.name }}</strong></p>
+    </div>
+  </section>
+  <section>
+    <ul class="clients">
+      <li class="client" :class="{ active: selected === i }" v-for="(client, i) in clients" :key="i" @click="selectClient(i)">
+        <img :src="client.photo" alt="client photo">
+      </li>
+    </ul>
+  </section>
+</div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+  <script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
+<script src='https://assets.codepen.io/16327/Flip.min.js'></script>
+<script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+      <script id="rendered-js" >
+const { createApp } = Vue;
+
+createApp({
+  data() {
+    return {
+      clients: [
+      {
+        name: "Willie Rice",
+        photo: "https://randomuser.me/api/portraits/women/68.jpg",
+        quote:
+        "GICT has revolutionized the way we manage our data. Its seamless integration and powerful features have made our operations more efficient than ever." },
+
+      {
+        name: "Matthew Sanders",
+        photo: "https://randomuser.me/api/portraits/men/24.jpg",
+        quote:
+        "I can't imagine running my business without GICT. It has simplified our data storage and backup processes, giving us peace of mind and allowing us to focus on growth." },
+
+      {
+        name: "Mike Hill",
+        photo: "https://randomuser.me/api/portraits/men/99.jpg",
+        quote:
+        "GICT's user-friendly interface and exceptional customer support have exceeded my expectations. It's the perfect cloud service app for both tech-savvy professionals and beginners alike." },
+
+      {
+        name: "Vickie Jacobs",
+        photo: "https://randomuser.me/api/portraits/women/47.jpg",
+        quote:
+        "Thanks to GICT, our team can collaborate effortlessly, access files from anywhere, and stay productive even when working remotely. It's an invaluable tool for our organization." },
+
+      {
+        name: "Judith Richardson",
+        photo: "https://randomuser.me/api/portraits/women/0.jpg",
+        quote:
+        "The scalability and reliability of GICT have transformed our business operations. It has seamlessly handled our increasing data demands without any hiccups." },
+
+      {
+        name: "James Collins",
+        photo: "https://randomuser.me/api/portraits/men/1.jpg",
+        quote:
+        "GICT's robust security measures have given us peace of mind. Our sensitive data is protected, and we can trust that our information is in safe hands." },
+
+      {
+        name: "Kristin Andrews",
+        photo: "https://randomuser.me/api/portraits/women/29.jpg",
+        quote:
+        "As a freelancer, GICT has been a game-changer for me. It allows me to seamlessly share large files with my clients, making collaboration a breeze." },
+
+      {
+        name: "Carmen Kelly",
+        photo: "https://randomuser.me/api/portraits/women/66.jpg",
+        quote:
+        "GICT's affordability and flexible pricing plans have made it an excellent choice for our small business. We get top-notch service without breaking the bank." },
+
+      
+      ],
+
+
+      selected: 0,
+      clientObj: {
+        name: "",
+        photo: "",
+        quote: "" },
+
+      selected: 0 };
+
+  },
+  methods: {
+    selectClient(c) {
+      this.selected = c;
+      this.clientObj.name = this.clients[c].name;
+      this.clientObj.photo = this.clients[c].photo;
+      this.clientObj.quote = this.clients[c].quote;
+      this.animateClient();
+    },
+    animateClient() {
+      gsap.set("#client-photo", { opacity: 0, y: 10 });
+      gsap.set("#client-quote", { opacity: 0, y: 10 });
+      gsap.set("#client-name", { opacity: 0, y: 10 });
+
+      let tl = gsap.timeline({
+        defaults: {
+          ease: "back.out" } });
+
+
+      tl.to("#client-photo", 0.5, { opacity: 1, y: 0 }).
+      to("#client-quote", 0.5, { opacity: 1, y: 0 }, "-=0.2").
+      to("#client-name", 0.5, { opacity: 1, y: 0 }, "-=0.3");
+    } },
+
+  mounted() {
+    this.selectClient(this.selected);
+  } }).
+mount("#app");
+//# sourceURL=pen.js
+    </script>
+
+  
+</body>
+
+</html>
