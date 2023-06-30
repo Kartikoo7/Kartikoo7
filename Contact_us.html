@@ -1280,6 +1280,150 @@ table td + td {
 }
 
 
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
+
+/* body{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight:300;
+  background-color:lightblue;
+  color:#FFF;
+} */
+
+section{
+  text-align:center;
+}
+
+.footer #button{
+	width:40px;
+	height:20px;
+	border: #8d00c5 3px solid;
+	border-radius:20px;
+	margin:0 auto;
+	position:relative;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.footer #button:hover{
+	width:35px;
+	height:35px;
+	border: #ff0c18 12px solid;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	position:relative;
+}
+.footer {
+	bottom:0;
+	left:0;
+	position:fixed;
+    width: 100%;
+    height: 2em;
+    overflow:hidden;
+    margin:0 auto;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	z-index:999;
+}
+.footer:hover {
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	height: 15em;
+}
+.footer #container{
+	margin-top:5px;
+	width:100%;
+height:100%;
+  position:relative;
+  top:0;
+  left:0;
+	background: #6b12a7;
+}
+.footer #cont{
+  position:relative;
+  top:-45px;
+  right:190px;
+	width:150px;
+	height:auto;
+	margin:0 auto;
+}
+.footer_center{
+	width:500px;
+	float:left;
+  text-align:center;
+}
+.footer h3{
+	font-family: 'Helvetica';
+	font-size: 30px;
+	font-weight: 100;
+  color: #9224f0;
+	margin-top:70px;
+	margin-left:40px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Anton|Roboto');
+
+.word {
+	font-family: 'Agdasima', sans-serif;
+	perspective: 1000px; 
+}
+
+.word span {
+	cursor: pointer;
+	display: inline-block;
+	font-size: 100px;
+	user-select: none;
+	line-height: .8;
+}
+
+.word span:nth-child(1).active {
+	animation: rotate 5s ease-out infinite;
+}
+.word span:nth-child(2).active {
+	animation: rotate 1s ease-out infinite;
+}
+.word span:nth-child(3).active {
+	animation: rotate 1s ease-out infinite;
+}
+.word span:nth-child(4).active {
+	animation: rotate 1s ease-out infinite;
+}
+.word span:nth-child(5).active {
+	animation: rotate 1s ease-out infinite;
+}
+.word span:nth-child(6).active {
+	animation: rotate 5s ease-out infinite;
+}
+
+@keyframes rotate {
+	0%, 100% {
+		transform: rotateY(180deg);
+	}
+	
+	50% {
+		transform: rotateY(360deg);
+	}
+}
+
+
+
+.fixed {
+	position: fixed;
+	top: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
     /* Injected CSS Code */
 </style>
 
@@ -1348,42 +1492,49 @@ JotForm.paymentExtrasOnTheFly([null,null,null,{"name":"email3","qid":"3","text":
       <li style="display:none">Should be Empty: <input type="text" name="website" value="" /></li>
     </ul>
   </div>
-  <!-- <script>
-    JotForm.showJotFormPowered = "new_footer";
-  </script>
-  <script>
-    JotForm.poweredByText = "Powered by Jotform";
-  </script><input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="231797644780469" />
-  <script type="text/javascript">
-    var all_spc = document.querySelectorAll("form[id='231797644780469'] .si" + "mple" + "_spc");
-    for (var i = 0; i < all_spc.length; i++)
-    {
-      all_spc[i].value = "231797644780469-231797644780469";
-    }
-  </script> -->
-  <!-- <div class="formFooter-heightMask"></div>
-  <div class="formFooter f6 branding21" style="display: flex!important; opacity: 1!important; visibility: visible!important;">
-    <div class="formFooter-wrapper formFooter-leftSide">
-      <a href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=231797644780469&utm_content=jotform_logo&utm_campaign=powered_by_jotform_le" target="_blank" class="formFooter-logoLink">
-        <img class="formFooter-logo" src="https://cdn.jotfor.ms/assets/img/logo2021/jotform-logo-white.svg" alt="Jotform Logo" style="height: 44px;">
-      </a>
-    </div>
-    <div class="formFooter-wrapper formFooter-rightSide">
-      <span class="formFooter-text">Now create your own Jotform - It's free!</span>
-      <a class="formFooter-button" href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=231797644780469&utm_content=jotform_button&utm_campaign=powered_by_jotform_le" target="_blank">Create your own Jotform</a>
-    </div>
-  </div> -->
+ 
 </form>
 
 <br><br>
 <center><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.4228532848147!2d83.03642700732543!3d25.121391130573684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e3737fb277733%3A0x90a25f3e9ef9faef!2sGYANODAY%20INSTITUTE%20OF%20COMPUTER%20%26%20TECHNOLOGY!5e0!3m2!1sen!2sin!4v1687374388030!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></center>
 <br><br>
 
+<div class="footer">
+  <div id="button"></div>
+<div id="container">
+<div id="cont">
+<div class="footer_center">
+	   <h3>Made with ❤️ By</h3>
+     <div class="word">
+      <span>K</span>
+      <span>A</span>
+      <span>R</span>
+      <span>T</span>
+      <span>I</span>
+      <span>K</span>
+      
+    </div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  const spans = document.querySelectorAll('.word span');
 
-
-
+spans.forEach((span, idx) => {
+	span.addEventListener('click', (e) => {
+		e.target.classList.add('active');
+	});
+  span.addEventListener('animationend', (e) => {
+    e.target.classList.remove('active');
+  });
+	
+	// Initial animation
+	setTimeout(() => {
+		span.classList.add('active');
+	}, 750 * (idx+1))
+});
+</script>
 
 </body>
 </html>
-
-<!-- <script type="text/javascript">JotForm.ownerView=true;</script> -->
